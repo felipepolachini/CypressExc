@@ -6,7 +6,7 @@
   "scripts": {
     "cy:open": "cypress open",
     "test": "cypress run",
-    "test:cloud": "cypress run --record"
+    "test:cloud": "cypress run --record --key 1d0c8883-dd85-4c8f-a904-ebd267460149"
   },
   "repository": {
     "type": "git",
