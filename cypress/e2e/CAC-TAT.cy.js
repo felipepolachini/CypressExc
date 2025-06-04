@@ -84,20 +84,20 @@ describe('Central de Atendimento ao Cliente TAT', () => {
  })
 
  it('seleciona um arquivo da pasta fixtures', ()=>{
-    cy.get('#file-upload').selectFile('cypress/fixtures/example.json').should(result=>{
+    cy.get('#file-upload').selectFile('/cypress/fixtures/example.json').should(result=>{
         expect(result[0].name).to.equal('example.json')
         expect(result[0].type).to.equal('application/json')
     })
  })
 
- it('seleciona um arquivo simulando um drag-and-drop', ()=>{
-    cy.get('#file-upload').selectFile('cypress/fixtures/example.json', {action: 'drag-drop'}).should(result=>{
+ it.only('seleciona um arquivo simulando um drag-and-drop', ()=>{
+    cy.get('#file-upload').selectFile('C:/curso-cypress/CypressExc/cypress/fixtures/example.json', {action: 'drag-drop'}).should(result=>{
         expect(result[0].name).to.equal('example.json')
         expect(result[0].type).to.equal('application/json')
     })
  })
 
- it('seleciona um arquivo utilizando uma fixture para a qual foi dada um alias', ()=>{
+ it.only('seleciona um arquivo utilizando uma fixture para a qual foi dada um alias', ()=>{
     cy.fixture('example.json', null).as('input')
     cy.get('#file-upload').selectFile('@input', {action: 'drag-drop'}).should(result=>{
         expect(result[0].name).to.equal('example.json')
